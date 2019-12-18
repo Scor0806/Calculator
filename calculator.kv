@@ -1,0 +1,65 @@
+#:kivy 1.11.0
+<CalcInput>:
+    font_size: 16
+
+<CalculatorWindow>:
+    id: main_win
+    orientation: 'vertical'
+
+    BoxLayout:
+        id: display
+        size_hint_y: .2
+
+        Label:
+            id: expr
+            text: ''
+            size_hint_x: .3
+            halign: 'center'
+            font_size: 26
+        Label:
+            id: equal
+            text: ''
+            size_hint_x: .5
+            halign: 'center'
+            font_size: 26
+        Label:
+            id: result
+            text: ''
+            size_hint_x: .2
+            halign: 'center'
+            font_size: 26
+
+    CalcInput:
+        id: query
+        foreground_color: (0,0,0,1)
+        multiline: False
+        font_size: 32
+        size_hint_y: .1
+    BoxLayout:
+        id: main_buttons
+        size_hint_y: .6
+        padding: 3
+        spacing: 3
+        GridLayout:
+            id: numbers_grid
+            cols: 3
+            spacing: 3
+        BoxLayout:
+            id: symbols_cont
+            orientation: 'vertical'
+            spacing: 3
+            GridLayout:
+                id: symbols
+                cols: 3
+                spacing: 3
+                size_hint_y: .75
+        GridLayout:
+            id: last_symbols
+            cols: 1
+            spacing: 3
+            size_hint_x: .35
+    BoxLayout:
+        id: status_bar
+        size_hint_y: .1
+        Label:
+            text: 'scor0806.github.io/Brent.Nicholas (2019)'
